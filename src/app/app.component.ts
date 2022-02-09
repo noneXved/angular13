@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular13';
   username: string = "Damian";
+  isCreated: boolean = true;
 
   clearUsername() {
+    this.isCreated = !this.isCreated;
     this.username = '';
+  }
+
+  getColor() {
+    return this.username === 'Damian' ? 'green' : 'red';
   }
 }

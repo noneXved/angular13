@@ -6,5 +6,11 @@
 <input type="text" [(ngModel)]="username">
 <p> {{ username }}</p>
 <button type="button" (click)="clearUsername()" [disabled]="username === ''">Click me!</button>
+<p *ngIf="isCreated; else noName">User is Created {{ username }}</p>
+<ng-template #noName>
+  <p>Is CREATED!</p>
+</ng-template>
 
+
+<p [ngStyle]="{backgroundColor: getColor()}">Dummy text</p>
 
