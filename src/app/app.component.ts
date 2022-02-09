@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular13';
+  username: string = "Damian";
+
+  clearUsername() {
+    this.username = '';
+  }
 }
