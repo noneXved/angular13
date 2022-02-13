@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
-import { DialogComponent } from './components/dialog/dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
@@ -16,7 +15,6 @@ import { ShoppingEditComponent } from './components/shopping-list/shopping-edit/
 @NgModule({
   declarations: [
     AppComponent,
-    DialogComponent,
     HeaderComponent,
     RecipesComponent,
     RecipesListComponent,
