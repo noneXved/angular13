@@ -6,16 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular13';
-  username: string = "Damian";
-  isCreated: boolean = true;
+  loadedFeature = 'recipe';
 
-  clearUsername() {
-    this.isCreated = !this.isCreated;
-    this.username = '';
-  }
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
 
-  getColor() {
-    return this.username === 'Damian' ? 'green' : 'red';
   }
 }
