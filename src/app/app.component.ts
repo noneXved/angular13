@@ -10,6 +10,7 @@ import {Post} from "./post.model";
 })
 export class AppComponent {
   loadedPosts: Post[] = [];
+  isFetching = false;
 
   constructor(private http: HttpClient) {
   }
@@ -35,6 +36,7 @@ export class AppComponent {
   }
 
   private fetchPosts() {
+    this.isFetching = true;
     this.http.get<{ [key: string]: Post }>('https://ng-complete-guide-b7fdc-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
       .pipe(
         map(responseData => {
@@ -46,6 +48,7 @@ export class AppComponent {
           }
           return postsArray;
         })).subscribe(posts => {
+          this.isFetching = false;
           this.loadedPosts = posts
     });
 
