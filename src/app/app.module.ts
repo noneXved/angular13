@@ -10,6 +10,13 @@ import {ServersComponent} from "./servers/servers.component";
 import {EditServerComponent} from "./servers/edit-server/edit-server.component";
 import {ServerComponent} from "./servers/server/server.component";
 import {UserComponent} from "./users/user/user.component";
+import {RouterModule, Routes} from "@angular/router";
+
+const appRoutes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'users', component: UsersComponent},
+  {path: 'servers', component: ServersComponent}
+];
 
 @NgModule({
   declarations: [
@@ -22,12 +29,14 @@ import {UserComponent} from "./users/user/user.component";
     UsersComponent,
     UserComponent
   ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        BrowserAnimationsModule
-    ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes)
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
