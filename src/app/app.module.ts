@@ -4,10 +4,12 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ShortenpipePipe } from './shortenpipe.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShortenpipePipe
   ],
     imports: [
         BrowserModule,
