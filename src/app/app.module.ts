@@ -11,6 +11,7 @@ import {EditServerComponent} from "./servers/edit-server/edit-server.component";
 import {ServerComponent} from "./servers/server/server.component";
 import {UserComponent} from "./users/user/user.component";
 import {RouterModule, Routes} from "@angular/router";
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,7 +21,11 @@ const appRoutes: Routes = [
   {path: 'servers', component: ServersComponent, children: [
       {path: ':id', component: ServerComponent},
       {path: ':id/edit', component: ServersComponent}
-    ] }
+    ] },
+  {path: 'not-found', component: PageNotFoundComponent},
+  //Do nothing - but should protect from '' '/recipes'
+  { path: '', redirectTo: '/not-found', pathMatch: 'full' },
+  {path: '**', redirectTo: '/not-found'}
 ];
 
 @NgModule({
@@ -32,7 +37,8 @@ const appRoutes: Routes = [
     EditServerComponent,
     ServerComponent,
     UsersComponent,
-    UserComponent
+    UserComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
